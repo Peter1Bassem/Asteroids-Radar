@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="asteroid"
+            type="com.peter.asteroids.Asteroid" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_background">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/title_asteroid_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@{asteroid.codename}"
+                android:text="@{asteroid.codename}"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Asteroid Title"/>
+
+            <TextView
+                android:id="@+id/close_date_approche_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                tools:text="Close Date Approche"
+                android:contentDescription="@{asteroid.closeApproachDate}"
+                android:text="@{asteroid.closeApproachDate}"
+                android:textColor="@color/default_text_color"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/status_hazardous_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            tools:src="@drawable/ic_status_normal"
+            android:contentDescription="@{asteroid.codename}"
+            app:statusIcon="@{asteroid.potentiallyHazardous}" />
+
+
+    </RelativeLayout>
+</layout>
